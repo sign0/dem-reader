@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "geotiff": "geotiffjs/geotiff.js#n-bit-support",
+    "geotiff": "^1.0.0-beta.13",
     "transformations": "^1.2.0"
   },
   "devDependencies": {
