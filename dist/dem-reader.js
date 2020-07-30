@@ -12,7 +12,7 @@ const GeoTIFF = require('geotiff');
 const transformGeographicToUTM = require('transformations').transformGeographicToUTM;
 class DemReader {
   constructor(image) {
-    this._epsg = 'EPSG:' + image.getGeoKeys().ProjectedCSTypeGeoKey;
+    this._epsg = 'EPSG:' + ( image.getGeoKeys().ProjectedCSTypeGeoKey || image.getGeoKeys().GeographicTypeGeoKey );
     this._image = image;
     const tiepoint = this._image.getTiePoints()[0];
     const pixelScale = this._image.getFileDirectory().ModelPixelScale;
