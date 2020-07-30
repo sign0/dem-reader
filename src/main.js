@@ -3,7 +3,7 @@ const transformGeographicToUTM = require('transformations').transformGeographicT
 
 export default class DemReader {
   constructor(image) {
-    this._epsg = 'EPSG:' + image.getGeoKeys().ProjectedCSTypeGeoKey;
+    this._epsg = 'EPSG:' + ( image.getGeoKeys().ProjectedCSTypeGeoKey || image.getGeoKeys().GeographicTypeGeoKey );
     this._image = image;
 
     const tiepoint = this._image.getTiePoints()[0];
